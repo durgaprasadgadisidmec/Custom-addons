@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_patient_form" model="ir.ui.view">
+        <field name="name">patient</field>
+        <field name="model">hospital.patient</field>
+        <field name="arch" type="xml">
+            <form string="patient">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="patient_name"/>
+                            <field name="email"/>
+                            <field name="age"/>
+                            <field name="gender"/>
+                        </group>
+                        <group>
+                            <field name="is_patient_in_ward"/>
+                            <field name="admit_date" invisible="is_patient_in_ward == False"/>
+                            <field name="discharge_date" invisible="is_patient_in_ward == False"/>
+                            <field name="doctor_id"/>
+                            <field name="d_email"/>
+                            <field name="patient_names" widget="many2many_tags"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="order lines">
+                            <field name="patient_lines">
+                                <list editable="bottom">
+                                    <field name="product_id"/>
+                                    <field name="qty"/>
+                                    <field name="unit_price"/>
+                                    <field name="sub_total"/>
+                                </list>
+                                <form>
+                                    <field name="product_id"/>
+                                    <field name="qty"/>
+                                    <field name="unit_price"/>
+                                    <field name="sub_total"/>
+                                </form>
+                            </field>
+                        </page>
+                        <page string="Other information">
+                            <group>
+                                <field name="user_id"/>
+                                <field name="company_id"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+    <record id="view_patient_list" model="ir.ui.view">
+        <field name="name">patient</field>
+        <field name="model">hospital.patient</field>
+        <field name="arch" type="xml">
+            <list string="patient">
+                <field name="patient_name"/>
+                <field name="age"/>
+                <field name="doctor_id"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_hospital_patient" model="ir.actions.act_window">
+        <field name="name">patient</field>
+        <field name="res_model">hospital.patient</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" ref="view_patient_list"/>
+    </record>
+
+</odoo>
