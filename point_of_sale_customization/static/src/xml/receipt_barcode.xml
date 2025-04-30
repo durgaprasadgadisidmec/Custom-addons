@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+  <t t-name="your_module.OrderReceipt" t-inherit="point_of_sale.OrderReceipt" t-inherit-mode="extension">
+    <xpath expr="//OrderWidget" position="inside">
+      <t t-set="line" t-value="scope.line" />
+      <t t-if="line.product.barcode">
+        <div class="pos-line-barcode">Barcode: <t t-esc="line.product.barcode" /></div>
+      </t>
+      <t t-else="">
+        <div class="pos-line-barcode">Barcode: No Barcode</div>
+      </t>
+    </xpath>
+  </t>
+</templates>
