@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_salepersons_report_document">
+        <t t-call="web.html_container">
+            <div style="text-align: center; margin-bottom: 20px;">
+                <h2 style="margin: 0;">SIDMIC PVT LMT</h2>
+                <p style="margin: 0;">201-DEKSHA COMPLEX,PATLE NAGR,NEAR JNTU METRO,HYDERABAD</p>
+                <p style="margin: 0;">9912382399, sidmec@gmail.com, http://sidmec.com, TRN: 00225879942</p>
+            </div>
+            <div class="page">
+                <!-- Company Header -->
+                <!-- Title -->
+                <h1 style="text-align: center; font-weight: bold; margin-bottom: 20px;">
+                    Sale Report
+                </h1>
+
+                <!-- Info Table -->
+                <table class="table table-bordered" style="margin-bottom: 30px; width: 100%;">
+                    <thead>
+                        <tr>
+                            <th style="font-weight: bold;text-align: left;">Sales Person</th>
+                            <th style="font-weight: bold;text-align: left;">From Date</th>
+                            <th style="font-weight: bold;text-align: left;">To Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <span t-esc="wizard.get('sales_person')"/>
+                            </td>
+                            <td>
+                                <span t-esc="wizard.get('from_date')"/>
+                            </td>
+                            <td>
+                                <span t-esc="wizard.get('to_date')"/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Orders Table -->
+                <table class="table table-sm table-bordered"
+                       style="width: 100%; border-collapse: collapse; font-size: 12px;">
+                    <thead>
+                        <tr style="background-color: #f0f0f0;">
+                            <th style="font-weight: bold;text-align: left;">Reference</th>
+                            <th style="font-weight: bold;text-align: left;">Customer</th>
+                            <th style="font-weight: bold;text-align: left;">Invoice Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="sale_orders" t-as="order">
+                            <tr>
+                                <td>
+                                    <span t-esc="order.get('name')"/>
+                                </td>
+                                <td>
+                                    <span t-esc="order.get('partner_name')"/>
+                                </td>
+                                <td>
+                                    <span t-esc="order.get('amount_total')"/>
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2" style="text-align: lift; font-weight: bold;">
+                                Total Amount
+                            </td>
+                            <td>
+                                <span t-esc="wizard.get('total_amount')"/>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+            </div>
+        </t>
+    </template>
+</odoo>

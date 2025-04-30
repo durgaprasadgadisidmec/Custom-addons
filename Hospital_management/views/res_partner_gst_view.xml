@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_form_inherit_gst" model="ir.ui.view">
+        <field name="name">res.partner.form.gst.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="gst_number" placeholder="22AAAAA0000A1Z5"/>
+            </xpath>
+            <xpath expr="//field[@name='gst_number']" position="after">
+                <div class="text-muted" style="font-size: 80%; margin-top: 4px;">
+                    Example GST Number: <strong>22AAAAA0000A1Z5</strong>
+                </div>
+                <field name="auto_email" readonly="1"/>
+                <field name="mobile_number"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

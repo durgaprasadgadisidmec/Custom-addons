@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="sdm_pos_customization.ProductCard" t-inherit="point_of_sale.ProductCard" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('product-img')]" position="after">
+            <div class="product-info">
+                <div class="product_barcode">
+                    <t t-if="props.barcode">
+                        Barcode: <span t-esc="props.barcode"/>
+                    </t>
+                    <t t-else="">
+                        No Barcode
+                    </t>
+                </div>
+                <div class="product_lst_price">
+                    <span t-esc="props.lst_price"/> AED
+                </div>
+            </div>
+            <!--            <div t-esc="props.barcode"/>-->
+            <!--            <div t-esc="props.lst_price"/>-->
+
+        </xpath>
+    </t>
+</templates>

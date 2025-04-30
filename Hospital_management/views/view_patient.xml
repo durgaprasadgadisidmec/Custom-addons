@@ -5,16 +5,31 @@
         <field name="model">hospital.patient</field>
         <field name="arch" type="xml">
             <form string="patient">
+                 <header>
+                    <button name="send_email" string="Send mail" type="object" class="btn-primary"/>
+                     <field name="status" widget="statusbar" statusbar_visible="admit,discharge"/>
+                 </header>
                 <sheet>
+                     <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button"
+                                name="view_patient_lines"
+                                type="object"
+                                icon="fa-pencil-square-o"
+                                string="patient"/>
+                    </div>
+                    <field name="image" widget="image" class="oe_avatar"/>
                     <group>
                         <group>
                             <field name="patient_name"/>
-                            <field name="email"/>
-                            <field name="age"/>
+                            <field name="email" />
+                            <field name="mobile" />
+                            <field name="date_of_birth" />
+                            <field name="age" readonly="1"/>
                             <field name="gender"/>
                         </group>
                         <group>
                             <field name="is_patient_in_ward"/>
+<!--                            <field name="patient_code" readonly="1"/>-->
                             <field name="admit_date" invisible="is_patient_in_ward == False"/>
                             <field name="discharge_date" invisible="is_patient_in_ward == False"/>
                             <field name="doctor_id"/>
@@ -58,8 +73,35 @@
             <list string="patient">
                 <field name="patient_name"/>
                 <field name="age"/>
+                <field name="email"/>
+                <field name="mobile"/>
                 <field name="doctor_id"/>
             </list>
+        </field>
+    </record>
+
+     <!-- Action to Open Patient Form -->
+    <record id="action_hospital_patient" model="ir.actions.act_window">
+        <field name="name">patient</field>
+        <field name="res_model">hospital.patient</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" ref="view_patient_list"/>
+    </record>
+
+     <record id="action_open_discharge_wizard" model="ir.actions.server">
+        <field name="name">Discharge Selected Patients</field>
+        <field name="model_id" ref="model_hospital_patient"/>
+        <field name="binding_model_id" ref="model_hospital_patient"/>
+        <field name="binding_view_types">list</field>
+        <field name="state">code</field>
+        <field name="code">
+            action = {
+                'type': 'ir.actions.act_window',
+                'res_model': 'patient.discharge.wizard',
+                'view_mode': 'form',
+                'target': 'new',
+                'context': {'default_patient_ids': active_ids},
+            }
         </field>
     </record>
 

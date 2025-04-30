@@ -2,3 +2,8 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_hospital_patient,access_hospital_patient,model_hospital_patient,,1,1,1,1
 access_hospital_patient_line,access_hospital_patient_line,model_hospital_patient_line,,1,1,1,1
 access_hospital_doctor,access_hospital_doctor,model_hospital_doctor,,1,1,1,1
+access_patient_invoices_wizard,access_patient_invoices_wizard,model_patient_invoices_wizard,,1,1,1,1
+access_patient_discharge_wizard,access_patient_discharge_wizard,model_patient_discharge_wizard,,1,1,1,1
+access_sales_wizard,access_sales_wizard,model_sales_wizard,,1,1,1,1
+
+

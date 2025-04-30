@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_patient_lines_list" model="ir.ui.view">
+        <field name="name">patient lines</field>
+        <field name="model">hospital.patient.line</field>
+        <field name="arch" type="xml">
+            <list string="patient invoices">
+                <field name="product_id"/>
+                <field name="qty"/>
+                <field name="unit_price"/>
+<!--                <field name="subtotal"/>-->
+                <field name="patient"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_hospital_patient_lines" model="ir.actions.act_window">
+        <field name="name">patient lines</field>
+        <field name="res_model">hospital.patient.line</field>
+        <field name="view_mode">list</field>
+        <field name="view_id" ref="view_patient_lines_list"/>
+    </record>
+</odoo>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="report_patient_pdf" model="ir.actions.report">
+        <field name="name">Patient pdf report</field>
+        <field name="model">hospital.patient</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">Hospital_management.report_patient_report_document</field>
+        <field name="report_file">Hospital_management.report_patient_report_document</field>
+        <!--        <field name="paperformat_id" ref="hr.paperformat_hr_employee_badge"/>-->
+        <field name="print_report_name">(object.id)</field>
+        <field name="binding_model_id" ref="model_hospital_patient"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="report_patient_xlsx" model="ir.actions.report">
+        <field name="name">Patient Excel report</field>
+        <field name="model">hospital.patient</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">hospital_management.report_patient_excel</field>
+        <field name="report_file">hospital_management.report_patient_excel</field>
+        <field name="print_report_name">(object.id)</field>
+        <field name="binding_model_id" ref="model_hospital_patient"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

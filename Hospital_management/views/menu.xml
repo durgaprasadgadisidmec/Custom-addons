@@ -2,22 +2,19 @@
 <odoo>
     <menuitem id="hospital_root" name="HMS"/>
 
+    <menuitem id="first" name="patient" action="action_hospital_patient" parent="hospital_root" sequence="20"/>
 
-    <menuitem id="first"
-              name="patient"
-              action="action_hospital_patient"
-              parent="hospital_root"
-              sequence="20"
-    />
+    <menuitem id="second" name="doctor" action="action_hospital_doctor" parent="hospital_root" sequence="10"/>
 
+    <menuitem id="menu_reporting" name="Reporting" parent="hospital_root" sequence="30"/>
 
-    <menuitem id="second"
-              name="doctor"
-              action="action_hospital_doctor"
-              parent="hospital_root"
-              sequence="10"
-    />
+    <menuitem id="menu_patient_report" name="Patient pdf Report" parent="menu_reporting" sequence="10" action="action_hospital_patient_wizard"/>
 
+    <menuitem id="menu_patient_discharge_report" name="Patient dischage Report" parent="menu_reporting" sequence="20" action="action_patient_discharge_wizard"/>
+
+    <menuitem id="menu_credit_notes" name="credit notes" action="action_my_customer_credit_note" parent="hospital_root" sequence="50"/>
+
+    <menuitem id="sales_report" name="Sales Person Report" action="action_sales_wizard_report" parent="sale.menu_sale_report"/>
 
 
 

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="extend_pos_order_receipt" inherit_id="point_of_sale.OrderReceipt" priority="20">
+        <!-- Add a custom message before the footer -->
+        <xpath expr="//div[@class='before-footer']" position="before">
+            <div class="pos-receipt-order-data text-center">
+                <h4>🎉 Visit Again! 🎉</h4>
+                <p>Thank you for shopping with us!</p>
+            </div>
+        </xpath>
+    </template>
+</odoo>

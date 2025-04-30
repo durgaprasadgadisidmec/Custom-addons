@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_patient_invoices_report" model="ir.ui.view">
+        <field name="name">patient report</field>
+        <field name="model">patient.invoices.wizard</field>
+        <field name="arch" type="xml">
+            <form string="patient">
+                <group string="Patient report">
+                    <group>
+                        <field name="patient_id"/>
+                        <field name="admit_date"/>
+                    </group>
+                    <group>
+                        <field name="discharge_date"/>
+                    </group>
+                </group>
+                <footer>
+                    <button string="patient pdf report" name="view_pdf_report" type="object" class="oe_highlight"
+                            data-hotkey="q"/>
+                    <button string="Cancel" class="btn btn-secondary" special="cancel" data-hotkey="x"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_hospital_patient_wizard" model="ir.actions.act_window">
+        <field name="name">patient wizard</field>
+        <field name="res_model">patient.invoices.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_patient_report_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="obj">
+                <t t-call="web.external_layout">
+                    <img t-if="obj.company_id.logo" t-att-src="image_data_uri(obj.image)"
+                                 style="max-height: 100px;" alt="Logo"/>
+                    <div class="page">
+                        <div>
+<!--                            <img t-if="obj.company_id.logo" t-att-src="image_data_uri(obj.image)"-->
+<!--                                 style="max-height: 100px;" alt="Logo"/>-->
+<!--                            <br/>-->
+                            <div style="text-align: right;width: 100%;" class="">
+                                <h1>Invoice</h1>
+                                <table style="margin-left: auto;">
+                                    <tr>
+                                        <td>
+                                            <strong>Name:</strong>
+                                        </td>
+                                        <td>
+                                            <span t-field="obj.patient_name"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>Email:</strong>
+                                        </td>
+                                        <td>
+                                            <span t-field="obj.email"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>Age:</strong>
+                                        </td>
+                                        <td>
+                                            <span t-field="obj.age"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>Admit Date:</strong>
+                                        </td>
+                                        <td>
+                                            <span t-field="obj.admit_date"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>Discharge Date:</strong>
+                                        </td>
+                                        <td>
+                                            <span t-field="obj.discharge_date"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <table style="width: 100%;" class="table">
+                            <thead>
+                                <tr>
+                                    <th>Product_id</th>
+                                    <th>Quantity</th>
+                                    <th>Unit Price</th>
+                                    <th>Total Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="obj.patient_lines" t-as="line">
+                                    <tr>
+                                        <td>
+                                            <span t-field="line.product_id"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="line.qty"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="line.unit_price"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="line.sub_total"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="3">
+                                        Total
+                                    </td>
+                                    <div>
+                                        <td>
+                                            <span t-esc="sum(line.sub_total for line in obj.patient_lines)"/>
+                                        </td>
+                                    </div>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
