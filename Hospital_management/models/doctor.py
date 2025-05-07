@@ -1,4 +1,5 @@
 from odoo import models,fields
+from odoo.fields import Integer
 
 
 class HospitalDoctor(models.Model):
@@ -11,3 +12,4 @@ class HospitalDoctor(models.Model):
     gender = fields.Selection([("male", "Male"), ("female", "Female"), ("others", "Others")], string="Gender")
     patients=fields.Many2many(comodel_name='hospital.patient',string="Patients")
     email=fields.Char(string="Doctor_Email")
+    phone=fields.Integer(string="Phone No")

@@ -4,7 +4,7 @@
         <field name="name">doctor</field>
         <field name="model">hospital.doctor</field>
         <field name="arch" type="xml">
-            <form string="doctor">
+            <form string="Doctor">
                 <sheet>
                     <group>
                         <field name="name"/>
@@ -12,6 +12,7 @@
                         <field name="gender"/>
                         <field name="patients" widget="many2many_tags"/>
                         <field name="email"/>
+                        <field name="phone"/>
                     </group>
                 </sheet>
                 <chatter/>
@@ -26,11 +27,12 @@
                <field name="name"/>
                 <field name="experience"/>
                 <field name="gender"/>
+                <field name="phone"/>
             </list>
         </field>
     </record>
     <record id="action_hospital_doctor" model="ir.actions.act_window">
-        <field name="name">doctor</field>
+        <field name="name">Doctor</field>
         <field name="res_model">hospital.doctor</field>
         <field name="view_mode">list,form</field>
         <field name="view_id" ref="view_doctor_list"/>

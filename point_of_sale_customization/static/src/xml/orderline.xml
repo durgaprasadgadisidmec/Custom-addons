@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="sdm_pos_customization.Orderline" t-inherit="point_of_sale.Orderline" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('product-name')]" position="inside">
+            <div class="barcode-line">
+                Barcode:<t t-esc="line.barcode or 'No Bracode'"/>
+            </div>
+        </xpath>
+    </t>
+</templates>

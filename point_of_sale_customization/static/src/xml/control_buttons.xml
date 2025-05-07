@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="sdm_pos_customization.ControlButtons" t-inherit="point_of_sale.ControlButtons" t-inherit-mode="extension">
+        <xpath expr="//OrderlineNoteButton[@label]" position="after">
+            <button t-attf-class="{{this.props.class}} flex-shrink-0" t-if="!props.showRemainingButtons" t-att-class="newdialog" t-on-click="() => this.onClickDialog()">
+                Dialog/Order
+            </button>
+        </xpath>
+    </t>
+</templates>
