@@ -1,0 +1,13 @@
+<odoo>
+  <record id="view_product_template_form_inherit" model="ir.ui.view">
+    <field name="name">product.template.form.inherit</field>
+    <field name="model">product.template</field>
+    <field name="inherit_id" ref="product.product_template_form_view"/>
+    <field name="arch" type="xml">
+        <xpath expr="//field[@name='lot_valuated']" position="after">
+            <field name="warranty_available" invisible="is_storable == False"/>
+            <field name="period" invisible="warranty_available == False or is_storable == False" />
+        </xpath>
+      </field>
+  </record>
+</odoo>
