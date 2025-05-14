@@ -4,4 +4,4 @@ class ProductTemplate(models.Model):
     _inherit = 'product.template'
 
     warranty_available = fields.Boolean(string="Warranty Available")
-    period=fields.Integer(string=" Period(Days)")
+    warranty_period=fields.Integer(string=" Period(Days)")

@@ -1,5 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <menuitem id="product_warranty" name="ProductWarranty"/>
-
+    <data>
+        <menuitem
+            id="menu_warranty_submenu"
+            name="Warranty"
+            action="action_warranty_details"
+            parent="stock.menu_stock_inventory_control"
+            sequence="1000"
+        />
+    </data>
 </odoo>
+

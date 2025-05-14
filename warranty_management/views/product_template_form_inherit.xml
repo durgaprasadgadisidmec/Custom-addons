@@ -5,9 +5,18 @@
     <field name="inherit_id" ref="product.product_template_form_view"/>
     <field name="arch" type="xml">
         <xpath expr="//field[@name='lot_valuated']" position="after">
-            <field name="warranty_available" invisible="is_storable == False"/>
-            <field name="period" invisible="warranty_available == False or is_storable == False" />
+            <field name="warranty_available" invisible="lot_valuated == False"/>
+            <field name="warranty_period" invisible="warranty_available == False or lot_valuated == False" />
         </xpath>
       </field>
   </record>
 </odoo>
+
+
+
+
+
+
+
+<!-- <field name="warranty_available" invisible="is_storable == False"/>-->
+<!--            <field name="period" invisible="warranty_available == False or is_storable == False" />-->
