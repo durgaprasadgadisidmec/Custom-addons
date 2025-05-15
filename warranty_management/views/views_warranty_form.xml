@@ -8,7 +8,11 @@
                     <sheet>
                         <group>
                             <group>
-                                <field name="wh_doucment"/>
+                                <div>
+                                    <h1>
+                                        <field name="wh_doucment"/>
+                                    </h1>
+                                </div>
                                 <field name="customer_name"/>
                                 <field name="phone"/>
                             </group>
@@ -17,22 +21,22 @@
                                 <field name="source_document"/>
                             </group>
                         </group>
-                        <notebook>
-                            <page string="Product Warrantry Details">
-                                <field name="warranty_line_ids">
-                                    <list editable="bottom">
-                                        <field name="product_name"/>
-                                        <field name="quantity"/>
-                                        <field name="serial_number"/>
-                                    </list>
-                                    <form>
-                                        <field name="product_name"/>
-                                        <field name="quantity"/>
-                                        <field name="serial_number"/>
-                                    </form>
-                                </field>
-                            </page>
-                        </notebook>
+                        <!--                        <notebook>-->
+                        <!--                            <page string="Product Warrantry Details">-->
+                        <!--                                <field name="warranty_line_ids">-->
+                        <!--                                    <list editable="bottom">-->
+                        <!--                                        <field name="product_name"/>-->
+                        <!--                                        <field name="quantity"/>-->
+                        <!--                                        <field name="serial_number"/>-->
+                        <!--                                    </list>-->
+                        <!--                                    <form>-->
+                        <!--                                        <field name="product_name"/>-->
+                        <!--                                        <field name="quantity"/>-->
+                        <!--                                        <field name="serial_number"/>-->
+                        <!--                                    </form>-->
+                        <!--                                </field>-->
+                        <!--                            </page>-->
+                        <!--                        </notebook>-->
                     </sheet>
                 </form>
             </field>
@@ -43,18 +47,26 @@
             <field name="model">warranty.menu</field>
             <field name="arch" type="xml">
                 <search string="Search Warranty Records">
-                    <filter name="customer_name"/>
-                    <filter name="phone"/>
-                    <filter name="source_document"/>
-                    <filter name="serial_number"/>
-                    <filter name="wh_doucment"/>
-
                     <field name="product_name"/>
                     <field name="phone"/>
                     <field name="customer_name"/>
                     <field name="serial_number"/>
                     <field name="source_document"/>
                     <field name="wh_doucment"/>
+                    <separator/>
+                    <filter string="Status Valid" name="status" domain="[('status','=','valid')]"/>
+                    <filter string="Status Expired" name="status" domain="[('status','=','expired')]"/>
+                    <separator/>
+                    <group expand="0" string="Group By">
+                        <filter string="Product" name="product_name" context="{'group_by':'product_name'}"/>
+                        <filter string="Customer Name" name="customer_name" context="{'group_by':'customer_name'}"/>
+                        <filter string="Status" name="status" context="{'group_by':'status'}"/>
+                        <filter string="Phone" name="phone" context="{'group_by':'phone'}"/>
+                        <filter string="Delivery Date" name="delivery_date" context="{'group_by':'delivery_date'}"/>
+                        <filter string="Warranty Period" name="warranty_period"
+                                context="{'group_by':'warranty_period'}"/>
+                        <filter string="Serial Number" name="serial_number" context="{'group_by':'serial_number'}"/>
+                    </group>
                 </search>
             </field>
         </record>
@@ -63,8 +75,9 @@
             <field name="name">Warranty</field>
             <field name="model">warranty.menu</field>
             <field name="arch" type="xml">
-                <list string="Warrantry" create="0"  edit="0" >
+                <list string="Warrantry" create="0" edit="0">
                     <field name="product_name"/>
+                    <field name="quantity"/>
                     <field name="serial_number"/>
                     <field name="wh_doucment"/>
                     <field name="source_document"/>
@@ -73,7 +86,9 @@
                     <field name="phone"/>
                     <field name="warranty_period"/>
                     <field name="warranty_remaining"/>
-                    <field name="status"/>
+                    <field name="status" widget="badge"
+                           decoration-success="status == 'valid'"
+                           decoration-danger="status == 'expired'"/>
                 </list>
             </field>
         </record>

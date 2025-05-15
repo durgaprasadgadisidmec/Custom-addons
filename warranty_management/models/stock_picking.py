@@ -1,22 +1,25 @@
-from dataclasses import fields
-from odoo import models,fields
+from odoo import models
 from datetime import datetime
 
 class StockPicking(models.Model):
     _inherit = 'stock.picking'
 
-
     def button_validate(self):
         res = super().button_validate()
         for picking in self:
+            # ✅ Only process if it's an "outgoing" picking (Delivery Order)
+            if picking.picking_type_code != 'outgoing':
+                continue
+
             if not picking.origin:
                 continue
 
             for move_line in picking.move_line_ids:
                 product = move_line.product_id
-                serial_number = move_line.lot_id.name if move_line.lot_id else ''
-                warranty_period = product.product_tmpl_id.warranty_period
+                serial_number = move_line.lot_id.name if move_line.lot_id else 'No Serial'
+                warranty_period = product.product_tmpl_id.period  # Correct field
                 product_name = product.name
+                quantity = move_line.quantity  # Add this line
 
                 data = {
                     'product_name': product_name,
@@ -28,11 +31,14 @@ class StockPicking(models.Model):
                     'customer_name': picking.partner_id.name,
                     'phone': picking.partner_id.phone,
                     'warranty_period': warranty_period,
+                    'quantity': quantity,
+
                 }
 
                 self.env['warranty.menu'].create(data)
 
         return res
+
 
 
 

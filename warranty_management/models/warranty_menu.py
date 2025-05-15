@@ -10,19 +10,21 @@ class WarrantyMenu(models.Model):
     _name="warranty.menu"
     _description= "Warranty Menu"
 
-    warranty_line_ids = fields.One2many('warranty.line','warranty_id',string="Warranty Lines")
 
     product_name=fields.Char(string="Product",)
-    serial_number = fields.Char(string="Serical Number",)
+    serial_number = fields.Char(string="Serial Number",)
     wh_doucment = fields.Char(string="WH Doument",store=True)
     source_document = fields.Char(string="Source Document", )
     delivery_date = fields.Datetime(string="Delivery Date",  )
     scheduled_date = fields.Datetime(string='Scheduled Date', )
     customer_name = fields.Char(string="Customer Name", )
     phone = fields.Char(string="Customer Phone", )
+
     warranty_period = fields.Integer(string="Warranty Period (Days)")
     warranty_remaining = fields.Integer(string="Warranty Remaining (Days)", compute="_compute_warranty_info",store=True)
+
     status = fields.Selection([('valid', 'Valid'), ('expired', 'Expired')], string="Status", compute="_compute_warranty_info", store=True)
+    quantity = fields.Integer("Quantity")
 
 
     @api.depends('warranty_period', 'scheduled_date')
@@ -38,13 +40,60 @@ class WarrantyMenu(models.Model):
                 record.status = 'expired'
 
 
-class WarrantyLine(models.Model):
-    _name = "warranty.line"
-    _description = "Warranty Line"
+class StockPicking(models.Model):
+    _inherit = 'stock.picking'
 
-    product_name = fields.Char(string="Product")
-    quantity = fields.Integer("Quantity")
-    serial_number = fields.Char(string="Serical Number")
+    def button_validate(self):
+        res = super().button_validate()
+        for picking in self:
+            #  Only process if it's an "outgoing" picking (Delivery Order)
+            if picking.picking_type_code != 'outgoing':
+                continue
+
+            if not picking.origin:
+                continue
+
+            for move_line in picking.move_line_ids:
+                product = move_line.product_id
+                serial_number = move_line.lot_id.name if move_line.lot_id else 'No Serial'
+                warranty_period = product.product_tmpl_id.period  # Correct field
+                product_name = product.name
+                quantity = move_line.quantity  # Add this line
+
+                data = {
+                    'product_name': product_name,
+                    'serial_number': serial_number,
+                    'wh_doucment': picking.name,
+                    'source_document': picking.origin,
+                    'delivery_date': picking.date_done,
+                    'scheduled_date': picking.scheduled_date,
+                    'customer_name': picking.partner_id.name,
+                    'phone': picking.partner_id.phone,
+                    'warranty_period': warranty_period,
+                    'quantity': quantity,
+
+                }
+
+                self.env['warranty.menu'].create(data)
+
+        return res
+
+
+
+
+
+
+
+
+
+
+# class WarrantyLine(models.Model):
+#     _name = "warranty.line"
+#     _description = "Warranty Line"
+#
+#     product_name = fields.Char(string="Product")
+#     quantity = fields.Integer("Quantity")
+#     serial_number = fields.Char(string="Serical Number")
     # wh_doucment = fields.Char(string="WH Document")
     # source_document = fields.Char(string="Source Document")
     # delivery_date = fields.Datetime(string="Delivery Date")
@@ -54,4 +103,4 @@ class WarrantyLine(models.Model):
     # warranty_remaining = fields.Integer(string="Warranty Remaining (Days)")
     # status = fields.Char(string="Status")
 
-    warranty_id = fields.Many2one("warranty.menu", string="Warranty Reference", ondelete="cascade")
+
