@@ -6,12 +6,13 @@ class ProductTemplate(models.Model):
     _inherit = 'product.template'
     period = fields.Integer(string="Warranty Period (Days)")
 
+
 class WarrantyMenu(models.Model):
     _name="warranty.menu"
     _description= "Warranty Menu"
 
-
     product_name=fields.Char(string="Product",)
+    quantity = fields.Integer("Quantity")
     serial_number = fields.Char(string="Serial Number",)
     wh_doucment = fields.Char(string="WH Doument",store=True)
     source_document = fields.Char(string="Source Document", )
@@ -19,10 +20,8 @@ class WarrantyMenu(models.Model):
     scheduled_date = fields.Datetime(string='Scheduled Date', )
     customer_name = fields.Char(string="Customer Name", )
     phone = fields.Char(string="Customer Phone", )
-
     warranty_period = fields.Integer(string="Warranty Period (Days)")
     warranty_remaining = fields.Integer(string="Warranty Remaining (Days)", compute="_compute_warranty_info",store=True)
-
     status = fields.Selection([('valid', 'Valid'), ('expired', 'Expired')], string="Status", compute="_compute_warranty_info", store=True)
     quantity = fields.Integer("Quantity")
 
@@ -46,7 +45,6 @@ class StockPicking(models.Model):
     def button_validate(self):
         res = super().button_validate()
         for picking in self:
-            #  Only process if it's an "outgoing" picking (Delivery Order)
             if picking.picking_type_code != 'outgoing':
                 continue
 
@@ -71,36 +69,10 @@ class StockPicking(models.Model):
                     'phone': picking.partner_id.phone,
                     'warranty_period': warranty_period,
                     'quantity': quantity,
-
                 }
 
                 self.env['warranty.menu'].create(data)
 
         return res
-
-
-
-
-
-
-
-
-
-
-# class WarrantyLine(models.Model):
-#     _name = "warranty.line"
-#     _description = "Warranty Line"
-#
-#     product_name = fields.Char(string="Product")
-#     quantity = fields.Integer("Quantity")
-#     serial_number = fields.Char(string="Serical Number")
-    # wh_doucment = fields.Char(string="WH Document")
-    # source_document = fields.Char(string="Source Document")
-    # delivery_date = fields.Datetime(string="Delivery Date")
-    # customer_name = fields.Char(string="Customer Name")
-    # phone = fields.Char(string="Customer Phone")
-    # warranty_period = fields.Integer(string="Warranty Period (Days)")
-    # warranty_remaining = fields.Integer(string="Warranty Remaining (Days)")
-    # status = fields.Char(string="Status")
 
 

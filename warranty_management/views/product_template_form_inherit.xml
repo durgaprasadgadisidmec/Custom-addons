@@ -25,5 +25,4 @@
 
 
 
-<!--            <field name="warranty_available" invisible="lot_valuated == False"/>-->
-<!--            <field name="warranty_period" invisible="warranty_available == False or lot_valuated == False" />-->
+

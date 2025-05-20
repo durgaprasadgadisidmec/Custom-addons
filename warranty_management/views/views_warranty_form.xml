@@ -1,47 +1,5 @@
 <odoo>
     <data>
-        <record id="view_warranty_form" model="ir.ui.view">
-            <field name="name">Warranty</field>
-            <field name="model">warranty.menu</field>
-            <field name="arch" type="xml">
-                <form string="Warrantry" create="0" delete="0" edit="0">
-                    <sheet>
-                        <group>
-                            <group>
-                                <div>
-                                    <h1>
-                                        <field name="wh_doucment"/>
-                                    </h1>
-                                </div>
-                                <field name="customer_name"/>
-                                <field name="phone"/>
-                            </group>
-                            <group>
-                                <field name="delivery_date"/>
-                                <field name="source_document"/>
-                            </group>
-                        </group>
-                        <!--                        <notebook>-->
-                        <!--                            <page string="Product Warrantry Details">-->
-                        <!--                                <field name="warranty_line_ids">-->
-                        <!--                                    <list editable="bottom">-->
-                        <!--                                        <field name="product_name"/>-->
-                        <!--                                        <field name="quantity"/>-->
-                        <!--                                        <field name="serial_number"/>-->
-                        <!--                                    </list>-->
-                        <!--                                    <form>-->
-                        <!--                                        <field name="product_name"/>-->
-                        <!--                                        <field name="quantity"/>-->
-                        <!--                                        <field name="serial_number"/>-->
-                        <!--                                    </form>-->
-                        <!--                                </field>-->
-                        <!--                            </page>-->
-                        <!--                        </notebook>-->
-                    </sheet>
-                </form>
-            </field>
-        </record>
-
         <record id="view_warranty_menu_search" model="ir.ui.view">
             <field name="name">warranty search</field>
             <field name="model">warranty.menu</field>
