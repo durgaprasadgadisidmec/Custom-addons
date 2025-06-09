@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="email_template_meeting_minutes" model="mail.template">
+        <field name="name">Minutes of Meeting Email</field>
+        <field name="model_id" ref="model_meeting_minutes"/>
+        <field name="email_from">${(user.email or 'admin@example.com')|safe}</field>
+        <field name="email_to">${object.customer}</field>
+        <field name="body_html"><![CDATA[
+        <p>Hello,</p>
+        <p><strong>Meeting ID: </strong><t t-esc="object.sequence_id"/></p>
+        <p>Please find the minutes of the meeting below:</p>
+        <p><strong>Subject:</strong> <t t-esc="object.meeting_subjects"/></p>
+        <p><strong>Client Team:</strong> <t t-esc="object.client_team"/></p>
+        <p>Thank you.</p>
+    ]]></field>
+    </record>
+</odoo>

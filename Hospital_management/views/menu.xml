@@ -16,5 +16,4 @@
 
     <menuitem id="sales_report" name="Sales Person Report" action="action_sales_wizard_report" parent="sale.menu_sale_report"/>
 
-
 </odoo>

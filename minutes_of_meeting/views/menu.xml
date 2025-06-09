@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="menu_meeting_root" name="Minutes Of Meetings"/>
+    <menuitem id="menu_meeting_minutes" name="Minutes of Meeting" parent="menu_meeting_root" action="action_meeting_minutes"/>
+</odoo>

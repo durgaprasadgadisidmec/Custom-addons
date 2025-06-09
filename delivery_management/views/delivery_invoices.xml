@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="view_delivery_management_list" model="ir.ui.view">
+        <field name="name">Delivery invoices</field>
+        <field name="model">delivery.management</field>
+        <field name="arch" type="xml">
+            <list string="Delivery invoices" create="0">
+                <field name="number" readonly="1"/>
+                <field name="due_date"/>
+                <field name="next_activity"/>
+                <field name="tax_excluded" widget="monetary" sum="Total Tax Excluded"
+                       options="{'currency_field': 'currency_id'}"/>
+                <field name="total" widget="monetary" sum="Total Amount" options="{'currency_field': 'currency_id'}"/>
+                <field name="currency_id" optional="hide"/>
+                <field name="total_in_currency" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                <field name="delivery_boy"/>
+                <button name="%(action_assign_delivery_wizard)d"
+                        string="+"
+                        type="action"
+                        class="btn-primary"/>
+                <field name="order_amount_due" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                <field name="delivery_state" widget="badge"
+                       decoration-info="delivery_state == 'draft'"
+                       decoration-warning="delivery_state == 'transit'"
+                       decoration-primary="delivery_state in ('onway','collection')"
+                       decoration-success="delivery_state == 'arrived'"
+                       decoration-danger="delivery_state == 'cancel_delivery'"/>
+
+                <button name="action_cancel_delivery"
+                        type="object"
+                        string="Cancel Delivery" class="text-danger"
+                ></button>
+                <field name="payment_state" widget="badge"
+                       decoration-success="payment_state == 'paid'"
+                       decoration-warning="payment_state == 'not_paid'"
+                       decoration-danger="payment_state == 'denied'"
+                />
+                <field name="status" widget="badge"/>
+            </list>
+        </field>
+    </record>
+
+
+    <record id="action_delivery_management" model="ir.actions.act_window">
+        <field name="name">Delivery Invoices</field>
+        <field name="res_model">delivery.management</field>
+        <field name="view_mode">list</field>
+        <field name="view_id" ref="delivery_management.view_delivery_management_list"/>
+        <!--        <field name="domain">[('status','=','posted')]</field>-->
+    </record>
+
+    <record id="action_delivery_paid" model="ir.actions.act_window">
+        <field name="name">Delivery Paid</field>
+        <field name="res_model">delivery.management</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" ref="delivery_management.view_delivery_management_list"/>
+        <field name="domain">[('payment_state', '!=', 'not_paid')]</field>
+    </record>
+
+    <record id="action_delivery_cancelled" model="ir.actions.act_window">
+        <field name="name">Delivery Cancelled</field>
+        <field name="res_model">delivery.management</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" ref="delivery_management.view_delivery_management_list"/>
+        <field name="domain">[('delivery_state', '=', 'cancel_delivery')]</field>
+    </record>
+
+    <record id="action_delivery_assigned" model="ir.actions.act_window">
+        <field name="name">Delivery Assigned</field>
+        <field name="res_model">delivery.management</field>
+        <field name="view_mode">list,form</field>
+        <field name="views" eval="[
+        (ref('delivery_management.view_delivery_management_list'), 'list'),
+        (ref('delivery_management.view_delivery_assigned_form'), 'form')]"/>
+        <field name="domain">[('delivery_state', 'in', ('transit', 'onway', 'collection', 'cancel_delivery',
+            'arrived'))]
+        </field>
+    </record>
+
+    <record id="action_delivery_onway" model="ir.actions.act_window">
+        <field name="name">Delivery Onway</field>
+        <field name="res_model">delivery.management</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" ref="delivery_management.view_delivery_management_list"/>
+        <field name="domain">[('delivery_state', '=', 'onway')]</field>
+    </record>
+
+    <record id="action_delivery_collection" model="ir.actions.act_window">
+        <field name="name">Delivery Collection</field>
+        <field name="res_model">delivery.management</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" ref="delivery_management.view_delivery_management_list"/>
+        <field name="domain">[('delivery_state', '=', 'collection')]</field>
+    </record>
+
+    <record id="action_delivery_arrived" model="ir.actions.act_window">
+        <field name="name">Delivery Arrived</field>
+        <field name="res_model">delivery.management</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" ref="delivery_management.view_delivery_management_list"/>
+        <field name="domain">[('delivery_state', '=', 'arrived')]</field>
+    </record>
+
+    <record id="view_delivery_invoices_serch" model="ir.ui.view">
+        <field name="name">delivery search</field>
+        <field name="model">delivery.management</field>
+        <field name="arch" type="xml">
+            <search string="Search Delivery Records">
+                <field name="number"/>
+                <field name="due_date"/>
+                <field name="delivery_boy"/>
+                <field name="delivery_state"/>
+                <field name="payment_state"/>
+                <field name="status"/>
+                <separator/>
+                <filter string="Invoice" name="delivery_state" domain="[('delivery_state','=','draft')]"/>
+                <filter string="Delivery Assigned" name="delivery_state" domain="[('delivery_state','=','transit')]"/>
+                <filter string="Delivery Onway" name="delivery_state" domain="[('delivery_state','=','onway')]"/>
+                <filter string="Delivery SuccessFull" name="delivery_state"
+                        domain="[('delivery_state','=','arrived')]"/>
+                <filter string="Delivery Collection" name="delivery_state"
+                        domain="[('delivery_state','=','collection')]"/>
+                <filter string="Delivery Collection" name="delivery_state"
+                        domain="[('delivery_state','=','cancel_delivery')]"/>
+                <separator/>
+
+                <filter string="Paid" name="payment_state" domain="[('payment_state','=','paid')]"/>
+                <filter string="Not Paid" name="payment_state" domain="[('payment_state','=','not_paid')]"/>
+
+                <group expand="0" string="Group By">
+                    <filter string="Delivery Boy" name="delivery_boy" context="{'group_by':'delivery_boy'}"/>
+                    <filter string="Delivery Status" name="delivery_state" context="{'group_by':'delivery_state'}"/>
+                    <filter string="Payment Status" name="payment_state" context="{'group_by':'payment_state'}"/>
+                    <filter string="Due Date" name="due_date" context="{'group_by':'due_date'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+</odoo>

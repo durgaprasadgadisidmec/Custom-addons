@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_meeting_form" model="ir.ui.view">
+        <field name="name">meeting.minutes.form</field>
+        <field name="model">meeting.minutes</field>
+        <field name="arch" type="xml">
+            <form string="Minutes of Meeting">
+                <header>
+                    <button name="action_confirm" type="object" string="Confirm" state="draft"/>
+                    <button name="action_send_email" type="object" string="Send Email" class="btn-primary"
+                            state="post"/>
+                    <button name="action_print" type="object" string="Print"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,post,sent"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="meeting_subjects" string="Meeting Subject"/>
+                        <div class="d-flex">
+                            <h1>
+                                <field name="meeting_subjects"/>
+                            </h1>
+                        </div>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="sequence_id"/>
+                            <field name="customer"/>
+                            <field name="company_name"/>
+                            <field name="client_team"/>
+                        </group>
+                        <group col="2">
+                            <group>
+                                <field name="project" invisible="lead == True"/>
+                                <field name="project_names" invisible="project == False"/>
+                            </group>
+                            <group>
+                                <field name="lead" invisible="project == True"/>
+                                <field name="select_leads" invisible="lead == False"/>
+                            </group>
+                            <group>
+                                <label for="start_date" string="Start"/>
+                                <div class="o_row">
+                                    <field name="start_date" class="oe_inline"/>
+                                    <span class="oe_inline" style="margin: 0 10px;">—</span>
+                                    <field name="end_date" class="oe_inline"/>
+                                </div>
+                                <field name="duration_hours" readonly="1"/>
+                                <field name="location"/>
+                            </group>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Meting Information">
+                            <group>
+                                <group>
+                                    <field name="responisible_users"/>
+                                    <field name="attenties"/>
+                                    <field name="absenties"/>
+                                </group>
+                                <group>
+                                    <field name="note_taker"/>
+                                </group>
+                            </group>
+                            <group>
+                                <field name="topic_line_ids">
+                                    <list editable="bottom">
+                                        <field name="agenda_item"/>
+                                        <field name="discussion_summary"/>
+                                        <field name="decision_notes"/>
+                                        <field name="responsible_persons"/>
+                                        <field name="deadline"/>
+                                    </list>
+                                </field>
+                            </group>
+                            <group string="Conclusion Notes">
+                                <field name="conclusion_notes"/>
+                            </group>
+                        </page>
+                    </notebook>
+                    <group>
+                        <button name="action_send_email"
+                                string="Send Meeting Minutes to Attendees"
+                                type="object"
+                                class="btn-primary"
+                                icon="fa-paper-plane"
+                                state="{'invisible': [('state', '!=', 'post')]}"/>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+    <record id="view_meeting_search" model="ir.ui.view">
+        <field name="name">meeting search</field>
+        <field name="model">meeting.minutes</field>
+        <field name="arch" type="xml">
+            <search string="Search Minutes Meeting Records">
+                <field name="sequence_id"/>
+                <field name="meeting_subjects"/>
+                <field name="customer"/>
+                <field name="project_names"/>
+                <field name="select_leads"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <separator/>
+                <filter string="State Draft" name="state" domain="[('state','=','draft')]"/>
+                <filter string="State Post" name="state" domain="[('state','=','post')]"/>
+                <filter string="State Sent" name="state" domain="[('state','=','sent')]"/>
+                <separator/>
+                <group expand="0" string="Group By">
+                    <filter string="Project" name="project_names" context="{'group_by':'project_names'}"/>
+                    <filter string="StartDate" name="start_date" context="{'group_by':'start_date'}"/>
+                    <filter string="End Date Name" name="end_date" context="{'group_by':'end_date'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_meeting_list" model="ir.ui.view">
+        <field name="name">meeting.minutes.list</field>
+        <field name="model">meeting.minutes</field>
+        <field name="arch" type="xml">
+            <list string="Minutes of Meeting">
+                <field name="sequence_id"/>
+                <field name="meeting_subjects"/>
+                <field name="customer"/>
+                <field name="company_name"/>
+                <field name="client_team"/>
+                <field name="project_names"/>
+                <field name="select_leads"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="duration_hours"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_meeting_minutes" model="ir.actions.act_window">
+        <field name="name">Minutes of Meeting</field>
+        <field name="res_model">meeting.minutes</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

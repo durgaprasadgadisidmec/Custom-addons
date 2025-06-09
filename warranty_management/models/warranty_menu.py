@@ -54,9 +54,9 @@ class StockPicking(models.Model):
             for move_line in picking.move_line_ids:
                 product = move_line.product_id
                 serial_number = move_line.lot_id.name if move_line.lot_id else 'No Serial'
-                warranty_period = product.product_tmpl_id.period  # Correct field
+                warranty_period = product.product_tmpl_id.period
                 product_name = product.name
-                quantity = move_line.quantity  # Add this line
+                quantity = move_line.quantity
 
                 data = {
                     'product_name': product_name,

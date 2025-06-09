@@ -1,0 +1,84 @@
+<odoo>
+    <template id="report_minutes_meeting_template">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <t t-foreach="docs" t-as="doc">
+                    <div class="page">
+                        <h2 style="text-align: center;">Meeting Minutes</h2>
+                        <h3 style="text-align: center;">
+                            <t t-esc="doc.meeting_subjects"/>
+                        </h3>
+
+                        <p>
+                            <strong>Date-Time:</strong>
+                            <t t-esc="doc.start_date"/>
+                        </p>
+                        <p>
+                            <strong>Responsible:</strong>
+                            <t t-esc="doc.responisible_users.name"/>
+                        </p>
+                        <p>
+                            <strong>Note Taker:</strong>
+                            <t t-esc="doc.note_taker.name"/>
+                        </p>
+                        <p>
+                            <strong>Attendees:</strong>
+                            <t t-esc="doc.attenties.name"/>
+                        </p>
+                        <p>
+                            <strong>Absent Members:</strong>
+                            <t t-esc="doc.absenties.name"/>
+                        </p>
+                        <h4>Meeting Information</h4>
+                        <table class="table table-sm" style="width:100%; border: 1px solid #000;" cellspacing="0"
+                               cellpadding="4">
+                            <thead>
+                                <tr style="border: 1px solid #000;">
+                                    <th>Agenda / Item</th>
+                                    <th>Discussion Summary</th>
+                                    <th>Decision / Notes</th>
+                                    <th>Responsible</th>
+                                    <th>Deadline</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="doc.topic_line_ids" t-as="line">
+                                    <tr>
+                                        <td>
+                                            <t t-esc="line.agenda_item"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="line.discussion_summary"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="line.decision_notes"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="line.responsible_persons.name"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="line.deadline"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                        <h3>Conclusion</h3>
+                        <p>
+                            <t t-esc="doc.conclusion_notes"/>
+                        </p>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+    <record id="action_report_minutes_meeting" model="ir.actions.report">
+        <field name="name">Minutes of Meeting Report</field>
+        <field name="model">meeting.minutes</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">minutes_of_meeting.report_minutes_meeting_template</field>
+        <field name="report_file">minutes_of_meeting.report_minutes_meeting_template</field>
+        <field name="model_id" ref="minutes_of_meeting.model_meeting_minutes"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>
