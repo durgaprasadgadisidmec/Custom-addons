@@ -3,7 +3,7 @@
     "author": "Durga",
     "version": "18.0",
     "license": "LGPL-3",
-    "depends": ["base","account","web","sale_management",  'mail',"report_xlsx",],
+    "depends": ["base","account","web","sale_management", "mail","report_xlsx",],
     "data":
         [
             "security/ir.model.access.csv",

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_crm_form_update" model="ir.ui.view">
+        <field name="name">crm form</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_id']" position="before">
+                <field name="empolyee_name" widget="many2one_avatar"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="view_crm_list_update" model="ir.ui.view">
+        <field name="name">crm list</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_tree_view_oppor"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='email_from']" position="after">
+                <field name="empolyee_name" optional="hide" widget="many2one_avatar"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="search_crm_update" model="ir.ui.view">
+        <field name="name">crm search</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.view_crm_case_opportunities_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='salesperson']" position="before">
+                <field name="empolyee_name"/>
+                <filter string="Employee" name="empolyee_name" context="{'group_by': 'empolyee_name'}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

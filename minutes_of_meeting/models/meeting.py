@@ -7,6 +7,7 @@ class Meeting(models.Model):
     _name = 'meeting.minutes'
     _description = 'Minutes of Meeting'
     _inherit = ['mail.thread','mail.activity.mixin']
+    _rec_name = "meeting_subjects"
 
     topic_line_ids = fields.One2many('meeting.topic.line', 'meeting_id', string=" ")
 

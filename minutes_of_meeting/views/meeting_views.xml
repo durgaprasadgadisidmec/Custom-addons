@@ -44,7 +44,7 @@
                                     <span class="oe_inline" style="margin: 0 10px;">—</span>
                                     <field name="end_date" class="oe_inline"/>
                                 </div>
-                                <field name="duration_hours" readonly="1"/>
+                                <field name="duration_hours" readonly="1"/>i
                                 <field name="location"/>
                             </group>
                         </group>

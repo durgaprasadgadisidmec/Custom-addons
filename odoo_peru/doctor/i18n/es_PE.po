@@ -1,0 +1,1284 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* doctor
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-06 10:59+0000\n"
+"PO-Revision-Date: 2021-10-06 10:59+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__supplier_invoice_count
+msgid "# Vendor Bills"
+msgstr "# Facturas de proveedores"
+
+#. module: doctor
+#: model_terms:ir.ui.view,arch_db:doctor.dr_doctor
+msgid "<b>Company Address:</b>"
+msgstr "Dirección de la compañia:"
+
+#. module: doctor
+#: model_terms:ir.ui.view,arch_db:doctor.dr_doctor
+msgid "<span class=\"fa fa-plus-square\"/>\n"
+"									Create company"
+msgstr ""
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__property_account_payable_id
+msgid "Account Payable"
+msgstr "Cuenta a pagar"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__property_account_receivable_id
+msgid "Account Receivable"
+msgstr "Cuenta a cobrar"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__accounting_system
+msgid "Accounting System"
+msgstr "Sistema de Contabilidad"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__message_needaction
+msgid "Action Needed"
+msgstr "Acción Necesaria"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__activity_state
+msgid "Activity State"
+msgstr "Estado de la actividad"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__additional_info
+msgid "Additional info"
+msgstr "Información adicional"
+
+#. module: doctor
+#: model_terms:ir.ui.view,arch_db:doctor.dr_doctor
+msgid "Address"
+msgstr "Dirección"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__type
+msgid "Address Type"
+msgstr "Tipo de dirección"
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__lang
+msgid "All the emails and documents sent to this contact will be translated in this language."
+msgstr "Todos los correos electrónicos y documentos enviados a este contacto se traducirán en este idioma."
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__message_attachment_count
+msgid "Attachment Count"
+msgstr "Conteo de archivos adjuntos"
+
+#. module: doctor
+#: model_terms:ir.ui.view,arch_db:doctor.dr_doctor
+#: model_terms:ir.ui.view,arch_db:doctor.res_doctor_kanban_view
+msgid "Avatar"
+msgstr ""
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__bank_account_count
+msgid "Bank"
+msgstr "Banco"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__bank_ids
+msgid "Banks"
+msgstr "Bancos"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__barcode
+msgid "Barcode"
+msgstr "Código de barras"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__is_blacklisted
+msgid "Blacklist"
+msgstr "Lista negra"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__message_bounce
+msgid "Bounce"
+msgstr "Rebote"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__channel_ids
+msgid "Channels"
+msgstr "Canales"
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__is_company
+msgid "Check if the contact is a company, otherwise it is a person"
+msgstr "Marque esta casilla si el contacto es una compañía. En caso contrario, es una persona."
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__customer
+msgid "Check this box if this contact is a customer. It can be selected in sales orders."
+msgstr "Marque esta casilla si este contacto es un cliente. Puede ser seleccionado en órdenes de venta. "
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__supplier
+msgid "Check this box if this contact is a vendor. It can be selected in purchase orders."
+msgstr "Marque esta casilla si este contacto es un proveedor. Puede ser seleccionado en órdenes de compra. "
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__employee
+msgid "Check this box if this contact is an Employee."
+msgstr "Marque si el contacto es un empleado"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__city
+#: model_terms:ir.ui.view,arch_db:doctor.dr_doctor
+msgid "City"
+msgstr "Ciudad"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__color
+msgid "Color Index"
+msgstr "Índice de Colores"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__commercial_partner_id
+msgid "Commercial Entity"
+msgstr "Entidad comercial"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__commercial_name
+msgid "Commercial Name"
+msgstr "Nombre Comercial"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__ref_company_ids
+msgid "Companies that refers to partner"
+msgstr "Compañías que se refieren a la empresa"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__company_id
+#: model_terms:ir.ui.view,arch_db:doctor.dr_doctor
+msgid "Company"
+msgstr "Compañía"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__company_name
+msgid "Company Name"
+msgstr "Nombre de la compañía"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__commercial_company_name
+msgid "Company Name Entity"
+msgstr "Entidad del nombre de la compañía"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__company_type
+msgid "Company Type"
+msgstr "Tipo de compañía"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__company_code
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__name_print
+msgid "Company code"
+msgstr ""
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__partner_gid
+msgid "Company database ID"
+msgstr "ID de la base de datos de la empresa"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__contact_address
+msgid "Complete Address"
+msgstr "Dirección completa"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__condition
+msgid "Condition"
+msgstr "Condición"
+
+#. module: doctor
+#: model_terms:ir.ui.view,arch_db:doctor.dr_doctor
+msgid "Contact / Address"
+msgstr "Contacto/dirección"
+
+#. module: doctor
+#: model_terms:ir.ui.view,arch_db:doctor.dr_doctor
+msgid "Contact Name"
+msgstr "Nombre del contacto"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__child_ids
+msgid "Contacts"
+msgstr "Contactos"
+
+#. module: doctor
+#: model_terms:ir.ui.view,arch_db:doctor.dr_doctor
+msgid "Contacts & Addresses"
+msgstr "Contactos y direcciones"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__contracts_count
+msgid "Contracts Count"
+msgstr "Numero de contratos"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__payment_token_count
+msgid "Count Payment Token"
+msgstr "Cuenta Token de Pago"
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__message_bounce
+msgid "Counter of the number of bounced emails for this contact"
+msgstr "Contador del número de correos electrónicos rebotados de este contacto"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__country_id
+#: model_terms:ir.ui.view,arch_db:doctor.dr_doctor
+msgid "Country"
+msgstr "País"
+
+#. module: doctor
+#: model_terms:ir.ui.view,arch_db:doctor.view_create_user_wizard_form
+msgid "Create Login"
+msgstr ""
+
+#. module: doctor
+#: model_terms:ir.ui.view,arch_db:doctor.dr_doctor
+msgid "Create User"
+msgstr ""
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__create_users_button
+msgid "Create Users Button"
+msgstr ""
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__remaining_credit_amount
+msgid "Credit Amount"
+msgstr "Monto de crédito"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__credit_limit
+msgid "Credit Limit"
+msgstr "Crédito límite"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__property_stock_customer
+msgid "Customer Location"
+msgstr "Ubicación de cliente"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__property_payment_term_id
+msgid "Customer Payment Terms"
+msgstr "Plazo de pago de cliente"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__dashboard_ids
+msgid "Dashboard"
+msgstr ""
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__debit_limit
+msgid "Debit Limit"
+msgstr ""
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__trust
+msgid "Degree of trust you have in this debtor"
+msgstr "Grado de confianza para este deudor"
+
+#. module: doctor
+#: model_terms:ir.ui.view,arch_db:doctor.dr_doctor
+msgid "Delivery"
+msgstr "Entrega"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__district_id
+msgid "District"
+msgstr "Distrito"
+
+#. module: doctor
+#: model:ir.actions.act_window,name:doctor.action_doctor_window
+#: model_terms:ir.ui.view,arch_db:doctor.dr_doctor
+msgid "Doctor"
+msgstr ""
+
+#. module: doctor
+#: model:res.groups,name:doctor.group_optical_erp_doctors
+msgid "Doctors"
+msgstr ""
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__doc_number
+msgid "Document Number"
+msgstr "Número de Documento"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__doc_type
+msgid "Document Type"
+msgstr "Tipo de documento"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__pe_driver_license
+msgid "Driver License"
+msgstr "Licencia de conducir"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__activities_ids
+msgid "Economic Activities"
+msgstr "Actividad Económica"
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__partner_share
+msgid "Either customer (not a user), either shared user. Indicated the current partner is a customer without access or with a limited access created for sharing data."
+msgstr ""
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__email
+#: model_terms:ir.ui.view,arch_db:doctor.view_create_user_wizard_form
+msgid "Email"
+msgstr "Correo electrónico"
+
+#. module: doctor
+#: model_terms:ir.ui.view,arch_db:doctor.res_doctor_kanban_view
+msgid "Email :"
+msgstr ""
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__emission_system
+msgid "Emission System"
+msgstr "Sistema de emisión"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__employee
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__exchange_history_ids
+msgid "Exchange History"
+msgstr "Historial de cambio"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__property_account_position_id
+msgid "Fiscal Position"
+msgstr "Posicion Fiscal"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Seguidores (Canales)"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Empresas)"
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__email_formatted
+msgid "Format email address \"Name <email@domain>\""
+msgstr "Dirección de email con formato \"Nombre <email@domain>\""
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__email_formatted
+msgid "Formatted Email"
+msgstr "Email formateado"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__retention_agent_from
+msgid "From"
+msgstr "De"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__remaining_amount
+msgid "GiftCard Amount"
+msgstr "Monto de tarjeta de regalo"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__has_unreconciled_entries
+msgid "Has Unreconciled Entries"
+msgstr "Tiene entradas no conciliadas"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__id
+msgid "ID"
+msgstr ""
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__im_status
+msgid "IM Status"
+msgstr "Estado del chat"
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__message_unread
+msgid "If checked new messages require your attention."
+msgstr "Si está marcado, hay nuevos mensajes que requieren su atención"
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado, hay nuevos mensajes que requieren su atención."
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si se encuentra marcado, algunos mensajes tienen error de envío."
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__team_id
+msgid "If set, this Sales Team will be used for sales and assignations related to this partner"
+msgstr "Si establecido, este Equipo de Ventas sera utilizado para ventas y asignaciones relacionadas a este partner"
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__is_blacklisted
+msgid "If the email address is on the blacklist, the contact won't receive mass mailing anymore, from any list"
+msgstr "Si la dirección de email esta en la lista negra, el contacto ya no recibirá correo masivo de cualquier lista."
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__commercial_name
+msgid "If you do not have a commercial name, put \"-\" without quotes"
+msgstr "Si no tiene Nombre Comercial, ingrese \"-\" sin comillas"
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__legal_name
+msgid "If you do not have a legal name, put \"-\" without quotes"
+msgstr "Si no tiene Nombre Legal, ingrese \"-\" sin comillas"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__image
+msgid "Image"
+msgstr "Imagen"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__industry_id
+msgid "Industry"
+msgstr "Sector"
+
+#. module: doctor
+#: model_terms:ir.ui.view,arch_db:doctor.dr_doctor
+msgid "Internal Notes"
+msgstr "Notas internas"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__ref
+msgid "Internal Reference"
+msgstr "Referencia interna"
+
+#. module: doctor
+#: model_terms:ir.ui.view,arch_db:doctor.dr_doctor
+msgid "Internal note..."
+msgstr "Nota Interna..."
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__invoice_warn
+#: model_terms:ir.ui.view,arch_db:doctor.dr_doctor
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__invoice_ids
+msgid "Invoices"
+msgstr "Facturas"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__retention_agent
+msgid "Is Agent"
+msgstr "Es Agente"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__is_doctor
+msgid "Is Doctor"
+msgstr ""
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__message_is_follower
+msgid "Is Follower"
+msgstr "Es un seguidor"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__is_validate
+msgid "Is Validated"
+msgstr "Es validado"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__is_company
+msgid "Is a Company"
+msgstr "Es una compañia"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__customer
+msgid "Is a Customer"
+msgstr "Es Cliente"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__supplier
+msgid "Is a Vendor"
+msgstr "Es proveedor"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__function
+msgid "Job Position"
+msgstr "Puesto de trabajo"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__journal_item_count
+msgid "Journal Items"
+msgstr "Apuntes contables"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__lang
+msgid "Language"
+msgstr "Idioma"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__last_update
+msgid "Last Update"
+msgstr "Última actualización"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__last_time_entries_checked
+msgid "Last time the invoices & payments matching was performed for this partner. It is set either if there's not at least an unreconciled debit and an unreconciled credit or if you click the \"Done\" button."
+msgstr "Última vez que se conciliaros facturas y pagos de este asociado. Se configura incluso si no hay ningún débito o crédito por conciliar, o si pulsa el botón \"Hecho\"."
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__last_time_entries_checked
+msgid "Latest Invoices & Payments Matching Date"
+msgstr "Fecha de la última conciliación de facturas y pagos"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__legal_name
+msgid "Legal Name"
+msgstr "Nombre Legal"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__card_ids
+msgid "List of card"
+msgstr "Lista de tarjetas"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__recharged_ids
+msgid "List of recharged card"
+msgstr "Lista de tarjetas recargadas"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__used_ids
+msgid "List of used card"
+msgstr "Lista de tarjetas usadas"
+
+#. module: doctor
+#: model_terms:ir.ui.view,arch_db:doctor.dr_doctor
+msgid "Logo"
+msgstr ""
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__loyalty_points_earned
+msgid "Loyalty Points Earned"
+msgstr "Puntos de lealtad ganados"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Adjuntos principales"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__main_activity
+msgid "Main Economic Activity"
+msgstr "Actividad económica principal"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__image_medium
+msgid "Medium-sized image"
+msgstr "Imagen de tamaño mediano"
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__image_medium
+msgid "Medium-sized image of this contact. It is automatically resized as a 128x128px image, with aspect ratio preserved. Use this field in form views or some kanban views."
+msgstr "Imagen mediana de este contacto. Se redimensiona automáticamente a 128x128px, con el ratio de aspecto preservado. Se usa este campo en las vistas formulario y en algunas vistas kanban."
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de Envío de Mensaje"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__invoice_warn_msg
+msgid "Message for Invoice"
+msgstr "Mensaje para factura"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__purchase_warn_msg
+msgid "Message for Purchase Order"
+msgstr "Mensaje para el pedido de compra"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__sale_warn_msg
+msgid "Message for Sales Order"
+msgstr "Mensaje para el pedido de venta"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__picking_warn_msg
+msgid "Message for Stock Picking"
+msgstr "Mensaje para recolección de stock"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: doctor
+#: model_terms:ir.ui.view,arch_db:doctor.dr_doctor
+msgid "Misc"
+msgstr "Misc."
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__mobile
+msgid "Mobile"
+msgstr "Móvil"
+
+#. module: doctor
+#: model_terms:ir.ui.view,arch_db:doctor.dr_doctor
+msgid "Mobile:"
+msgstr "Móvil:"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__name
+#: model_terms:ir.ui.view,arch_db:doctor.dr_doctor
+msgid "Name"
+msgstr "Nombre"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Siguiente plazo de actividad"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumen de la siguiente actividad"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__activity_type_id
+msgid "Next Activity Type"
+msgstr "Siguiente tipo de actividad"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__comment
+msgid "Notes"
+msgstr "Notas"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__message_has_error_counter
+msgid "Number of error"
+msgstr "Número de error"
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de envío"
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Número de mensajes no leidos"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__parent_name
+msgid "Parent name"
+msgstr "Nombre del padre"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__contract_ids
+msgid "Partner Contracts"
+msgstr "Contratos de la Empresa "
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__partner_id
+msgid "Partner-related data of the Doctor"
+msgstr ""
+
+#. module: doctor
+#: model_terms:ir.ui.view,arch_db:doctor.view_create_user_wizard_form
+msgid "Password"
+msgstr "Contraseña"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__payment_token_ids
+msgid "Payment Tokens"
+msgstr "Tableros de pago"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__phone
+msgid "Phone"
+msgstr "Teléfono"
+
+#. module: doctor
+#: model_terms:ir.ui.view,arch_db:doctor.dr_doctor
+msgid "Phone:"
+msgstr "Teléfono:"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__remaining_loyalty_amount
+msgid "Points to Amount"
+msgstr "Monto de puntos"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__pos_order_count
+msgid "Pos Order Count"
+msgstr "Recuento de los pedidos del punto de venta"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__prefer_ereceipt
+msgid "Prefer E-Receipt"
+msgstr "Prefiero recibo electrónico"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__property_product_pricelist
+msgid "Pricelist"
+msgstr "Lista de Precios"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__province_id
+msgid "Province"
+msgstr "Provincia"
+
+#. module: doctor
+#: model_terms:ir.ui.view,arch_db:doctor.dr_doctor
+msgid "Purchase"
+msgstr "Compra"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__purchase_warn
+msgid "Purchase Order"
+msgstr "Orden de Compra"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__purchase_order_count
+msgid "Purchase Order Count"
+msgstr ""
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__website_id
+msgid "Registration Website"
+msgstr "Sitio web de registro"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__parent_id
+msgid "Related Company"
+msgstr "Empresa relacionada"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__partner_id
+msgid "Related Partner"
+msgstr "Empresa relacionada"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__remaining_wallet_amount
+msgid "Remaining Amount"
+msgstr "Cantidad restante"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__remaining_debit_amount
+msgid "Remaining Debit Limit"
+msgstr "Límite de débito restante"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__remaining_loyalty_points
+msgid "Remaining Loyalty Points"
+msgstr "Puntos de lealtad restantes"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__remaining_credit_limit
+msgid "Remaining Reservation Credit Limit"
+msgstr "Límite de crédito de reserva restante"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__representative_ids
+msgid "Representatives"
+msgstr "Representantes"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__retention_agent_resolution
+msgid "Resolution"
+msgstr "Resolución"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario responsable"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__sale_order_count
+msgid "Sale Order Count"
+msgstr "Recuento de pedidos de venta"
+
+#. module: doctor
+#: model_terms:ir.ui.view,arch_db:doctor.dr_doctor
+msgid "Sales"
+msgstr "Ventas"
+
+#. module: doctor
+#: model_terms:ir.ui.view,arch_db:doctor.dr_doctor
+msgid "Sales & Purchases"
+msgstr "Ventas y Compras"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__sale_order_ids
+msgid "Sales Order"
+msgstr "Órdenes de venta"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__team_id
+msgid "Sales Team"
+msgstr "Equipo de Ventas"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__sale_warn
+msgid "Sales Warnings"
+msgstr ""
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__user_id
+msgid "Salesperson"
+msgstr "Vendedor"
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__invoice_warn
+#: model:ir.model.fields,help:doctor.field_optical_dr__picking_warn
+#: model:ir.model.fields,help:doctor.field_optical_dr__purchase_warn
+#: model:ir.model.fields,help:doctor.field_optical_dr__sale_warn
+msgid "Selecting the \"Warning\" option will notify user with the message, Selecting \"Blocking Message\" will throw an exception with the message and block the flow. The Message has to be written in the next field."
+msgstr "Si selecciona la opción \"Aviso\" se notificará a los usuarios con el mensaje, si selecciona \"Mensaje de bloqueo\" se lanzará una excepción con el mensaje y se bloqueará el flujo. El mensaje debe escribirse en el siguiente campo."
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__self
+msgid "Self"
+msgstr "Sí mismo"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__send_loyalty_mail
+msgid "Send Loyalty Mail"
+msgstr "Enviar correo de lealtad"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__partner_share
+msgid "Share Partner"
+msgstr "Compartir empresa"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__signup_expiration
+msgid "Signup Expiration"
+msgstr "Expiración del ingreso"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__signup_token
+msgid "Signup Token"
+msgstr "Palabra de ingreso"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__signup_type
+msgid "Signup Token Type"
+msgstr "Tipo de la palabra de ingreso"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__signup_valid
+msgid "Signup Token is Valid"
+msgstr "La palabra de ingreso es válida"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__signup_url
+msgid "Signup URL"
+msgstr "URL de ingreso"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__image_small
+msgid "Small-sized image"
+msgstr "Imagen de tamaño pequeño"
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__image_small
+msgid "Small-sized image of this contact. It is automatically resized as a 64x64px image, with aspect ratio preserved. Use this field anywhere a small image is required."
+msgstr "Imagen de tamaño pequeño de este contacto. Se redimensiona automáticamente a 64x64 px, con el ratio de aspecto preservado. Use este campo donde se requiera una imagen pequeña."
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__state
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__state_id
+#: model_terms:ir.ui.view,arch_db:doctor.dr_doctor
+msgid "State"
+msgstr "Estado"
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__activity_state
+msgid "Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr "Estado basado en actividades\n"
+"Vencida: la fecha tope ya ha pasado\n"
+"Hoy: La fecha tope es hoy\n"
+"Planificada: futuras actividades."
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__picking_warn
+msgid "Stock Picking"
+msgstr "Albarán"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__street
+msgid "Street"
+msgstr "Calle"
+
+#. module: doctor
+#: model_terms:ir.ui.view,arch_db:doctor.dr_doctor
+msgid "Street 2..."
+msgstr "Calle 2..."
+
+#. module: doctor
+#: model_terms:ir.ui.view,arch_db:doctor.res_doctor_kanban_view
+msgid "Street :"
+msgstr ""
+
+#. module: doctor
+#: model_terms:ir.ui.view,arch_db:doctor.dr_doctor
+msgid "Street..."
+msgstr "Calle..."
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__street2
+msgid "Street2"
+msgstr "Calle2"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__supplier_id
+msgid "Supplier"
+msgstr "Proveedor"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__property_purchase_currency_id
+msgid "Supplier Currency"
+msgstr "Moneda de Proveedor"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__category_id
+msgid "Tags"
+msgstr "Etiquetas"
+
+#. module: doctor
+#: model_terms:ir.ui.view,arch_db:doctor.dr_doctor
+msgid "Tags..."
+msgstr "Etiquetas..."
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__vat
+msgid "Tax ID"
+msgstr "NIF"
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__vat
+msgid "The Tax Identification Number. Complete it if the contact is subjected to government taxes. Used in some legal statements."
+msgstr "El número de identificación de impuesto. Complételo si el contacto está sujeto a los impuestos del gobierno. Utilizado en algunas declaraciones legales."
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__property_account_position_id
+msgid "The fiscal position determines the taxes/accounts used for this contact."
+msgstr "La posición fiscal determina los impuestos/cuentas utilizados para este contacto. "
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__user_id
+msgid "The internal user in charge of this contact."
+msgstr "El usuario interno a cargo de este contacto."
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__pos_order_count
+msgid "The number of point of sales orders related to this customer"
+msgstr "El número de pedidos del punto de venta relacionados con este cliente"
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__has_unreconciled_entries
+msgid "The partner has at least one unreconciled debit and credit since last time the invoices & payments matching was performed."
+msgstr "El asociado tiene al menos un débito o crédito no conciliado desde la última vez que se realizó la conciliación de facturas y pagos."
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__tz
+msgid "The partner's timezone, used to output proper date and time values inside printed reports. It is important to set a value for this field. You should use the same timezone that is otherwise used to pick and render date and time values: your computer's timezone."
+msgstr "Zona horaria de la empresa, usada para mostrar la fecha y hora adecuadas en los informes. Es importante establecer un valor para este campo. Debería usar la misma zona horaria que se coge en cualquier caso para mostrar los valores de fecha y hora: la zona horaria de su ordenador."
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__property_stock_customer
+msgid "The stock location used as destination when sending goods to this contact."
+msgstr "La ubicación de almacén utilizada como destino al enviar mercancías a este contacto."
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__property_stock_supplier
+msgid "The stock location used as source when receiving goods from this contact."
+msgstr "La ubicación de almacén utilizada como origen al recibir productos de este contacto."
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__property_account_payable_id
+msgid "This account will be used instead of the default one as the payable account for the current partner"
+msgstr "Esta cuenta se utilizará en lugar de la cuenta por defecto como la cuenta pendiente de pago del asociado actual."
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__property_account_receivable_id
+msgid "This account will be used instead of the default one as the receivable account for the current partner"
+msgstr "Esta cuenta se utilizará en lugar de la cuenta por defecto como la cuenta pendiente de cobro del asociado actual."
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__property_purchase_currency_id
+msgid "This currency will be used, instead of the default one, for purchases from the current partner"
+msgstr "Se utilizará esta moneda, en lugar de la predeterminada, para las compras de la pareja actual"
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__image
+msgid "This field holds the image used as avatar for this contact, limited to 1024x1024px"
+msgstr "Este campo contiene la imagen utilizada como avatar para este contacto, limitada a 1024x1024px"
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__property_supplier_payment_term_id
+msgid "This payment term will be used instead of the default one for purchase orders and vendor bills"
+msgstr "Se utilizará esta condición de pago, en lugar de la predeterminada, para los pedidos de compra y las facturas de proveedor."
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__property_payment_term_id
+msgid "This payment term will be used instead of the default one for sales orders and customer invoices"
+msgstr "Este plazo de pago se utilizará en lugar del predeterminado para pedidos de cliente y facturas de clientes"
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__property_product_pricelist
+msgid "This pricelist will be used, instead of the default one, for sales to the current partner"
+msgstr "Esta tarifa se utilizará, en lugar de la por defecto, para las ventas de la empresa actual."
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__tz
+msgid "Timezone"
+msgstr "Zona horaria"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__tz_offset
+msgid "Timezone offset"
+msgstr "Compensación de zona horaria"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__title
+msgid "Title"
+msgstr "Título"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__total_invoiced
+msgid "Total Invoiced"
+msgstr "Total facturado"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__total_remaining_points
+msgid "Total Loyalty Points"
+msgstr "Puntos de fidelidad totales"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__debit
+msgid "Total Payable"
+msgstr "Total a pagar"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__credit
+msgid "Total Receivable"
+msgstr "Total a cobrar"
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__credit
+msgid "Total amount this customer owes you."
+msgstr "Importe total que le debe el cliente."
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__debit
+msgid "Total amount you have to pay to this vendor."
+msgstr "Importe total a pagar a este proveedor."
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__type_taxpayer
+msgid "Type Taxpayer"
+msgstr "Tipo de contribuyente"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__message_unread
+msgid "Unread Messages"
+msgstr "Mensajes por leer"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Contador de mensajes sin leer"
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__barcode
+msgid "Use a barcode to identify this contact from the Point of Sale."
+msgstr "Use un código de barras para identificar este contacto desde el punto de venta."
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__type
+msgid "Used by Sales and Purchase Apps to select the relevant address depending on the context."
+msgstr ""
+
+#. module: doctor
+#: code:addons/doctor/models/doctor.py:18
+#, python-format
+msgid "User for this patient already created."
+msgstr ""
+
+#. module: doctor
+#: model_terms:ir.ui.view,arch_db:doctor.view_create_user_wizard_form
+msgid "Username"
+msgstr ""
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__user_ids
+msgid "Users"
+msgstr "Usuarios"
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__currency_id
+msgid "Utility field to express amount currency"
+msgstr "Campo útil para expresar importe en divisa."
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__property_stock_supplier
+msgid "Vendor Location"
+msgstr "Ubicación de proveedor"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__property_supplier_payment_term_id
+msgid "Vendor Payment Terms"
+msgstr "Plazo de pago del proveedor"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__wallet_lines
+msgid "Wallet"
+msgstr "Billetera"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__website
+msgid "Website"
+msgstr "Sitio web"
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes del sitio web"
+
+#. module: doctor
+#: model:ir.model.fields,help:doctor.field_optical_dr__website_message_ids
+msgid "Website communication history"
+msgstr "Historial de comunicaciones del sitio web"
+
+#. module: doctor
+#: model_terms:ir.ui.view,arch_db:doctor.dr_doctor
+msgid "ZIP"
+msgstr "C.P."
+
+#. module: doctor
+#: model:ir.model.fields,field_description:doctor.field_optical_dr__zip
+msgid "Zip"
+msgstr "C.P."
+
+#. module: doctor
+#: model_terms:ir.ui.view,arch_db:doctor.dr_doctor
+msgid "e.g. BE0477472701"
+msgstr "Por ejemplo, ESA00000000"
+
+#. module: doctor
+#: model_terms:ir.ui.view,arch_db:doctor.dr_doctor
+msgid "e.g. Mr."
+msgstr "Por ejemplo, Mr."
+
+#. module: doctor
+#: model_terms:ir.ui.view,arch_db:doctor.dr_doctor
+msgid "e.g. Sales Director"
+msgstr "Por ejemplo, Director de Ventas"
+
+#. module: doctor
+#: model_terms:ir.ui.view,arch_db:doctor.dr_doctor
+msgid "e.g. https://www.odoo.com"
+msgstr "e.j. https://www.odoo.com"
+
+#. module: doctor
+#: model_terms:ir.ui.view,arch_db:doctor.dr_doctor
+msgid "internal note..."
+msgstr "Nota interna..."
+
+#. module: doctor
+#: model:ir.model,name:doctor.model_optical_dr
+msgid "optical.dr"
+msgstr ""
+
