@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_sale_target_form" model="ir.ui.view">
+        <field name="name">sale.target.form</field>
+        <field name="model">sale.target</field>
+        <field name="arch" type="xml">
+            <form string="Sale Target">
+                <header>
+                    <button name="action_completed" type="object" string="Completed" class="btn-primary"/>
+                    <button name="action_closed" type="object" string="Closed" class="btn-danger"/>
+                </header>
+
+                <sheet>
+                    <widget name="web_ribbon" title="Completed" bg_color="text-bg-success"
+                            invisible="state != 'comformed'"/>
+                     <widget name="web_ribbon" title="Closed" bg_color="text-bg-danger" invisible="state != 'closed'"/>
+                    <div class="oe_title">
+                        <label for="target_id" string="Target Id"/>
+                        <div class="d-flex" >
+                            <h1>
+                                <field name="target_id" placeholder="TG/01/06/2025/0001" />
+                            </h1>
+                        </div>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="from_date"/>
+                            <field name="to_date"/>
+                            <field name="conformed_only"/>
+                            <field name="including_draft"/>
+                            <field name="only_draft"/>
+
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Target Information">
+                            <field name="target_line_ids">
+                                <list editable="bottom">
+                                    <field name="user_employee"/>
+                                    <field name="target_amount"/>
+                                    <field name="achievement"/>
+                                    <field name="balance"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="view_sale_target_search" model="ir.ui.view">
+        <field name="name">sale target search</field>
+        <field name="model">sale.target</field>
+        <field name="arch" type="xml">
+            <search string="Search Sale Target Records">
+                <field name="target_id"/>
+                <field name="from_date"/>
+                <field name="to_date"/>
+                <filter string="Completed" name="state" domain="[('state','=','comformed')]"/>
+                <filter string="Closed" name="state" domain="[('state','=','closed')]"/>
+                <separator/>
+                <group expand="0" string="Group By">
+                    <filter string="State" name="state" context="{'group_by':'state'}"/>
+                    <filter string="From Date" name="from_date" context="{'group_by':'from_date'}"/>
+                    <filter string="To Date" name="to_date" context="{'group_by':'to_date'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+    <record id="view_sale_target_list" model="ir.ui.view">
+        <field name="name">sale.target.list</field>
+        <field name="model">sale.target</field>
+        <field name="arch" type="xml">
+            <list string="Sale Target">
+                <field name="target_id"/>
+                <field name="from_date"/>
+                <field name="to_date"/>
+                <field name="conformed_only"/>
+                <field name="including_draft"/>
+                <field name="only_draft"/>
+                <field name="state" widget="badge"
+                       decoration-success="state == 'comformed'"
+                       decoration-danger="state == 'closed'"/>
+            </list>
+        </field>
+    </record>
+    <record id="action_sale_target" model="ir.actions.act_window">
+        <field name="name">Sale Targets</field>
+        <field name="res_model">sale.target</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" ref="view_sale_target_form"/>
+        <field name="view_id" ref="view_sale_target_list"/>
+        <field name="search_view_id" ref="view_sale_target_search"/>
+    </record>
+</odoo>

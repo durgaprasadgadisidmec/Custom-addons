@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="menu_sales_target" name="Sale Target" parent="sale.sale_order_menu" action="action_sale_target"  sequence="100"/>
+</odoo>
