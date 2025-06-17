@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+ <record id="doctor_prescription" model="ir.actions.report">
+        <field name="name">Doctor Prescription</field>
+        <field name="model">dr.prescription</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">optical_erp.doctor_prescription_template</field>
+        <field name="report_file">optical_erp.doctor_prescription_template</field>
+        <field name="print_report_name">(object.id)</field>
+        <field name="binding_model_id" ref="model_dr_prescription"/>
+        <field name="binding_type">report</field>
+    </record>
+    </data>
+</odoo>

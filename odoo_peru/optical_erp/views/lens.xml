@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_product_template_form_lens" model="ir.ui.view">
+        <field name="name">product.template.form.lens</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_tooltip']" position="before">
+                <group>
+                    <field name="product_category"></field>
+                </group>
+            </xpath>
+            <xpath expr="//notebook/page[@name='inventory']" position="after">
+                <page name="Attributess" string="Lens">
+                    <group>
+                        <field name="material"/>
+                        <field name="lens_types"/>
+                        <field name="lens_style"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+    <record id="action_product_lens" model="ir.actions.act_window">
+        <field name="name">Lens</field>
+        <field name="res_model">product.template</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('lens_types','!=',False)]</field>
+        <field name="context">{'default_open_lens_page': True}</field>
+    </record>
+</odoo>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--    Template for Payslip Report-->
+    <template id="report_payslip">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <div style="text-align: left; margin-bottom: 10px;">
+                        <img t-if="res_company.logo"
+                             t-att-src="'data:image/png;base64,%s' % res_company.logo.decode('utf-8')"
+                             style="width: 150px; height: auto;"/>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 20px; font-size: 14px;">
+                        <div style="text-align: left;">
+                            <strong>
+                                <t t-esc="res_company.name"/>
+                            </strong>
+                            <br/>
+                            Tel:
+                            <t t-esc="res_company.phone or 'N/A'"/>
+                            <br/>Email:
+                            <t t-esc="res_company.email or 'N/A'"/>
+                            <br/>
+                            Address:
+                            <t t-esc="res_company.street or ''"/>
+                            <t t-if="res_company.street2">,
+                                <t t-esc="res_company.street2"/>
+                            </t>
+                            <t t-if="res_company.city">,
+                                <t t-esc="res_company.city"/>
+                            </t>
+                            <t t-if="res_company.state_id.name">,
+                                <t t-esc="res_company.state_id.name"/>
+                            </t>
+                            <t t-if="res_company.zip">,
+                                <t t-esc="res_company.zip"/>
+                            </t>
+                            <t t-if="res_company.country_id.name">,
+                                <t t-esc="res_company.country_id.name"/>
+                            </t>
+                            .
+                        </div>
+                        <div style="text-align: right; font-size: 12px;">
+                            <strong>Place:</strong>
+                            <t t-esc="res_company.city or 'N/A'"/>,
+                            <br/>
+                            <strong>Date:</strong>
+                            <t t-esc="docs.date.strftime('%d %B %Y') if docs.date else ''"/>
+                        </div>
+                    </div>
+                    <h2>Pay Slip</h2>
+                    <p t-field="o.name"/>
+                    <table class="table table-sm table-bordered">
+                        <tr>
+                            <td>
+                                <strong>Name</strong>
+                            </td>
+                            <td>
+                                <span t-field="o.employee_id"/>
+                            </td>
+                            <td>
+                                <strong>Designation</strong>
+                            </td>
+                            <td>
+                                <span t-field="o.employee_id.job_id"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Email</strong>
+                            </td>
+                            <td>
+                                <span t-field="o.employee_id.work_email"/>
+                            </td>
+                            <td>
+                                <strong>Identification No</strong>
+                            </td>
+                            <td>
+                                <span t-field="o.employee_id.identification_id"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Reference</strong>
+                            </td>
+                            <td>
+                                <span t-field="o.number"/>
+                            </td>
+                            <td>
+                                <strong>Bank Account</strong>
+                            </td>
+                            <td>
+                                <span t-field="o.employee_id.bank_account_id"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Date From</strong>
+                            </td>
+                            <td>
+                                <span t-field="o.date_from"/>
+                            </td>
+                            <td>
+                                <strong>Date To</strong>
+                            </td>
+                            <td>
+                                <span t-field="o.date_to"/>
+                            </td>
+                        </tr>
+                    </table>
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>Code</th>
+                                <th>Name</th>
+                                <th>Quantity/rate</th>
+                                <th>Amount</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="o.line_ids.filtered(lambda line: line.appears_on_payslip)"
+                                t-as="line">
+                                <td>
+                                    <span t-field="line.code"/>
+                                </td>
+                                <td>
+                                    <span t-field="line.name"/>
+                                </td>
+                                <td>
+                                    <span t-field="line.quantity"/>
+                                </td>
+                                <td>
+                                    <span t-esc="line.amount"
+                                          t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
+                                </td>
+                                <td>
+                                    <span t-esc="line.total"
+                                          t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="text-right">
+                        <strong>Authorized signature</strong>
+                    </p>
+                </div>
+            </t>
+
+        </t>
+    </template>
+</odoo>
